@@ -6,7 +6,7 @@ public class Events : MonoBehaviour
 
     public void ReplayGame()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("TileScene");
     }
 
     public void QuitGame()
