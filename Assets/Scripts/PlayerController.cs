@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
                 controller.Move(moveDir);
             else
                 controller.Move(diff);
+
+            
         }
         
 
@@ -96,7 +98,11 @@ public class PlayerController : MonoBehaviour
     {
         direction.y = jumpForce;
     }
-
+    void Die()
+    {
+        animator.SetBool("isDead", true);
+        // Diðer ölümle ilgili iþlemler (örneðin, oyun durdurma)
+    }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.transform.tag == "Obstacle")
