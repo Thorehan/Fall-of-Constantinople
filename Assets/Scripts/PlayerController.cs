@@ -8,19 +8,27 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     public float forwardSpeed;
 
+    public bool  isGrounded;
+
     private int desiredLane = 1; // 0:left, 1:mildde, 2:right
     public float laneDistance = 4; // iki serit arasi mesafe
     
     public float jumpForce;
     public float Gravity = -20;
+
+    public Animator animator;
     void Start()
     {
+
         controller = GetComponent<CharacterController>();
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         direction.z = forwardSpeed;
+
 
         direction.y += Gravity * Time.deltaTime;
         if(controller.isGrounded)
@@ -63,8 +71,14 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir);
         else
             controller.Move(diff);
-      }
 
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        {
+            animator.SetTrigger("Jump");
+        }
+
+
+    }
     private void FixedUpdate()
     {
         controller.Move(direction * Time.fixedDeltaTime);
@@ -80,6 +94,22 @@ public class PlayerController : MonoBehaviour
         if(hit.transform.tag == "Obstacle")
         {
             PlayerManager.gameOver = true;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 }
