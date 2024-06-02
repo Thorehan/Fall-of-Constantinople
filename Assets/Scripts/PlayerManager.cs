@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
-    public static bool gameOver;
+    public bool gameOver;
     public GameObject gameOverPanel;
     public static int numberOfCoins;
     public Text coninsText;
@@ -12,7 +12,6 @@ public class PlayerManager : MonoBehaviour
     {
         
         gameOver = false;
-        Time.timeScale = 1;
         numberOfCoins = 0;
         
     }
@@ -22,7 +21,6 @@ public class PlayerManager : MonoBehaviour
     {
         if (gameOver)
         {
-            Time.timeScale = 0;
             gameOverPanel.SetActive(true);
         }
         coninsText.text = "Coins: " + numberOfCoins;

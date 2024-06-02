@@ -963,9 +963,9 @@ GameObject:
   - component: {fileID: 8855018189134248746}
   - component: {fileID: 1114873287844576503}
   - component: {fileID: 5751898753464672140}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Yol
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

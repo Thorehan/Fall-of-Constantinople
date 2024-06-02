@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 1116938077405079393}
   - component: {fileID: 1116938077405079392}
   - component: {fileID: 1116938077405079407}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Yol
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

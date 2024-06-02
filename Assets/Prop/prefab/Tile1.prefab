@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7736100794821938499}
   - component: {fileID: 2217932479703976606}
   - component: {fileID: 6804279325270256101}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Yol
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,8 +599,12 @@ PrefabInstance:
       value: yerT3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2a7789d00e585947ba726d035c0a7ed, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2a7789d00e585947ba726d035c0a7ed, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a7789d00e585947ba726d035c0a7ed, type: 3}
