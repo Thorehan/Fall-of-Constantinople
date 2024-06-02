@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position == targetPosition)
             return;
         Vector3 diff = targetPosition - transform.position;
-        Vector3 moveDir = diff.normalized * 25;
+        Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
         if (moveDir.sqrMagnitude < diff.sqrMagnitude)
             controller.Move(moveDir);
         else
