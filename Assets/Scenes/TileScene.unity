@@ -712,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4759475769985230733, guid: 9d190c38e90594342af705389eebe895, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d190c38e90594342af705389eebe895, type: 3}
@@ -751,6 +751,7 @@ MonoBehaviour:
   - {fileID: 1116938076248871793, guid: bdfa23ffb8dbff04f9922f92b2840580, type: 3}
   - {fileID: 8933287135279487402, guid: e8bfd5703082738429d3b601e8a90bc1, type: 3}
   - {fileID: 8605609691763980544, guid: e8f67d45239dd3049939d5c929264da1, type: 3}
+  - {fileID: 8605609691763980544, guid: a8298ccb32b875a4f81d347359c3b194, type: 3}
   zSpawn: 0
   tileLength: 30
   numberOfTiles: 5
@@ -1477,6 +1478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 6
+  maxSpeed: 15
+  acceleration: 0.15
+  sideSpeed: 9
   groundMask:
     serializedVersion: 2
     m_Bits: 65536

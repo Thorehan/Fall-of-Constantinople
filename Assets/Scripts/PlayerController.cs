@@ -6,8 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 direction;
+
     public float forwardSpeed;
-    public LayerMask groundMask;
+
+    public float maxSpeed = 15f;
+
+    public float acceleration = 0.1f;
+
+    public float sideSpeed = 5f;
+
+        public LayerMask groundMask;
     public bool _isGrounded;
 
     private int desiredLane = 1; // 0:left, 1:mildde, 2:right
@@ -19,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     void Start()
     {
+        forwardSpeed = forwardSpeed;
 
         controller = GetComponent<CharacterController>();
 
@@ -27,6 +36,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        forwardSpeed += acceleration * Time.deltaTime;
+        Vector3 forwardMove = Vector3.forward * forwardSpeed * Time.deltaTime;
+
+        float horizontalInput = Input.GetAxis("Horizontal");
+        Vector3 sideMove = Vector3.right * horizontalInput * sideSpeed * Time.deltaTime;
+
+         if (forwardSpeed > maxSpeed)
+        {
+            forwardSpeed = maxSpeed;
+        }
+
         if (!PlayerManager.Instance.gameOver)
         {
             direction.z = forwardSpeed;
@@ -72,11 +93,15 @@ public class PlayerController : MonoBehaviour
             if (transform.position == targetPosition)
                 return;
             Vector3 diff = targetPosition - transform.position;
-            Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+            Vector3 moveDir = diff.normalized * forwardSpeed * Time.deltaTime;
             if (moveDir.sqrMagnitude < diff.sqrMagnitude)
                 controller.Move(moveDir);
             else
                 controller.Move(diff);
+
+                Vector3 move = sideMove;
+
+                controller.Move(move);
 
             
         }
@@ -101,7 +126,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         animator.SetBool("isDead", true);
-        // Diðer ölümle ilgili iþlemler (örneðin, oyun durdurma)
+        // Diï¿½er ï¿½lï¿½mle ilgili iï¿½lemler (ï¿½rneï¿½in, oyun durdurma)
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
