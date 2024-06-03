@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
             {
                 targetPosition += Vector3.right * laneDistance;
             }
-
+           
             if (transform.position == targetPosition)
                 return;
             Vector3 diff = targetPosition - transform.position;
