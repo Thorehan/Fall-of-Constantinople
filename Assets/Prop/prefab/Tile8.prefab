@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3525016688907651167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7765322695508048466}
+  - component: {fileID: 795374837192242429}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7765322695508048466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525016688907651167}
+  m_LocalRotation: {x: -0.043932013, y: 0.6830904, z: 0.71814007, w: 0.12542921}
+  m_LocalPosition: {x: -2.816, y: 1.1078029, z: 7.924}
+  m_LocalScale: {x: 1.4099, y: 0.04208, z: 1.41703}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8605609691763980547}
+  m_RootOrder: 59
+  m_LocalEulerAnglesHint: {x: -3.521, y: 11.809, z: -12.8}
+--- !u!65 &795374837192242429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525016688907651167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.000001, y: 1.0000011, z: 1.0000014}
+  m_Center: {x: 0.0000011948607, y: -0.0000004768383, z: 0.00000037974897}
 --- !u!1 &5037255374369111426
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +261,7 @@ Transform:
   - {fileID: 2549432782842098079}
   - {fileID: 5323197106382163793}
   - {fileID: 2207427403562564518}
+  - {fileID: 7765322695508048466}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

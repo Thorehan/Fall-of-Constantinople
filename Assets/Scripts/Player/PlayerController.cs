@@ -128,10 +128,12 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isDead", true);
         // Di�er �l�mle ilgili i�lemler (�rne�in, oyun durdurma)
     }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.transform.tag == "Obstacle")
         {
+            animator.SetTrigger("Death");
             PlayerManager.Instance.gameOver = true;
         }
     }
